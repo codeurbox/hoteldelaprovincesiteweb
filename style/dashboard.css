@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    position: relative;
+}
+.black-filter{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000095;
+    z-index: 1;
+    display: none;
+}
+.side_bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(26, 26, 26);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    min-width: 200px;
+    color: white;
+    padding: 20px 0px;
+}
+.side_bar a, .side_bar h1{
+    padding-left: 20px;
+}
+.side_bar nav{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+    gap: 10px;
+}
+.side_bar a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+}
+.side_bar a:hover{
+    background-color: #373737;
+}
+.side_bar a:hove{
+    
+}
+.side_bar img{
+    width: 25px;
+    filter: invert(100%);
+}
+.main{
+    margin-left: 200px;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 20px;
+}
+.main header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 230, 230);
+}
+a img{
+    width: 25px;
+}
+.notification{
+    position: relative;
+}
+.red-bubble{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+    position: absolute;
+}
+.charts{
+    max-width: 100%;
+}
+.chart_preview{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+}
+.chart_preview > div{
+    flex-basis: 50%;
+}
+.chart_preview > div canvas{
+    width: 100%!important;
+}
+.reservation_list{
+    flex-grow: 1;
+    height: 100%;
+    overflow: auto;
+}
+.reservation_list table{
+    width: 100%;
+}
+.reservation_list tr{
+    height: 50px;
+    padding: 0px 10px;
+}
+.reservation_table{
+    border-collapse: collapse;
+    font-size: 0.9em;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.reservation_table thead tr{
+    background-color: rgb(43, 76, 167);
+    color: white;
+    text-align: left;
+}
+.reservation_table th, .reservation_table td{
+    padding: 12px 15px;
+    cursor: pointer;
+}
+.reservation_table tbody tr{
+    border-bottom: 1px solid #dddddd;
+    transition: all 0.5s ease;
+}
+.reservation_table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.reservation_table tbody tr:last-of-type{
+    border: none;
+}
+.reservation_table tbody tr:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(117, 152, 247);
+}
+.chart-select{
+    padding: 8px 12px;
+    color: #333333;
+    background-color: #eeeeee;
+    border: 1px solid #dddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.reservation_table tbody tr .green-font{
+    color: green;
+}
+.reservation_table tbody tr .yellow-font{
+    color: rgb(255, 153, 0);
+}
+.reservation_table tbody tr .red-font{
+    color: rgb(255, 0, 0);
+}
+.reservation_preview{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff;
+    box-shadow: 1px 1px 10px #0000003e;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2;
+}
+.reservation_preview h1{
+    width: 100%;
+    text-align: center;
+    background-color: #333333;
+    padding: 20px 100px;
+    color: #fff;
+}
+.reservation_preview button{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.reservation_preview .preview{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: 500px;
+    padding: 20px;
+}
+.reservation_preview .preview .field{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.reservation_preview .preview .field span{
+    color: #757575;
+}
+.reservation_preview button img{
+    width: 25px;
+    filter: invert(100%);
+}

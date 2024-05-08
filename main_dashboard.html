@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+  <div class="black-filter"></div>
+    <div class="side_bar">
+        <h1>Logo</h1>
+        <nav>
+            <a href="#">
+                <img src="images/dashboard-svgrepo-com(1).png" alt="">
+                Dashboard
+            </a>
+            <a href="#">
+                <img src="images/check-square-svgrepo-com.png" alt="">
+                Reservation
+            </a>
+            <a href="#">
+                <img src="images/transaction-svgrepo-com.png" alt="">
+                Transaction
+            </a>
+            <a href="#">
+                <img src="images/product-item-svgrepo-com.png" alt="">
+                Chambres
+            </a>
+            <a href="#">
+                <img src="images/user-rounded-svgrepo-com.png" alt="">
+                Clients
+            </a>
+            <a href="#">
+                <img src="images/question-square-svgrepo-com.png" alt="">
+                FAQ
+            </a>
+            <a href="#">
+                <img src="images/gui-testimonial-svgrepo-com.png" alt="">
+                Temoignage
+            </a>
+        </nav>
+        <a href="#">
+            <img src="images/login-svgrepo-com.png" alt="">
+            Login
+        </a>
+    </div>
+    <div class="main">
+        <header>
+            <h2>Mardi le 15 Nov 2024</h2>
+            <a class="notification" href="#">
+                <div class="red-bubble"></div>
+                <img src="images/notification-svgrepo-com(1).png" alt="">
+            </a>
+        </header>
+        <div class="dashboard">
+            <div class="charts">
+                <div class="chart_preview">
+                    <div>
+                        <select class="chart-select">
+                            <option value="All">Tous</option>
+                            <option value="Year">cette année</option>
+                            <option value="month">Ce mois</option>
+                            <option value="week">Cet semaine</option>
+                            <option value="day">Aujourd'hui</option>
+                        </select>
+                        <canvas id="reservation_chart"></canvas>
+                    </div>
+                    <div>
+                        <select class="chart-select">
+                            <option value="All">Tous</option>
+                            <option value="Year">cette année</option>
+                            <option value="month">Ce mois</option>
+                            <option value="week">Cet semaine</option>
+                            <option value="day">Aujourd'hui</option>
+                        </select>
+                        <canvas id="client_chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reservation_list">
+          <table class="reservation_table">
+            <thead>
+              <tr>
+                <th>Reservation</th>
+                <th>Date de reservation</th>
+                <th>Client</th>
+                <th>Contact</th>
+                <th>Chambres</th>
+                <th>N* person</th>
+                <th>Status</th>
+                <th>Prix</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>              
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td class="yellow-font">Pending</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+                <div class="reservation_preview">
+                  <h1>Aperçu de la réservation</h1>
+                  <button class="close-preview"><img src="images/close-svgrepo-com(1).png" alt=""></button>
+                  <div class="preview">
+                  <div class="field">
+                    <h4>Identifiant de réservation</h4>
+                    <span>00001</span>
+                  </div>
+                  <div class="field">
+                    <h4>Client</h4>
+                    <span>Daniel le Poison</span>
+                  </div>
+                  <div class="field">
+                    <h4>Contact</h4>
+                    <span>+2434578438484</span>
+                  </div>
+                  <div class="field">
+                    <h4>Date d'arrivée</h4>
+                    <span>le 04 mai 2024</span>
+                  </div>
+                  <div class="field">
+                    <h4>Date de Depart</h4>
+                    <span>le 08 mai 2024</span>
+                  </div>
+                  <div class="field">
+                    <h4>Numero de chambre</h4>
+                    <span>005</span>
+                  </div>
+                  <div class="field">
+                    <h4>Type de chambre</h4>
+                    <span>Standard</span>
+                  </div>
+                  <div class="field">
+                    <h4>Nombre de personne</h4>
+                    <span>4</span>
+                  </div>
+                  <div class="field">
+                    <h4>Statut de réservation</h4>
+                    <span>Confirmé</span>
+                  </div>
+                  <div class="field">
+                    <h4>Prix Total</h4>
+                    <span>345$</span>
+                  </div>
+                  <div class="field">
+                    <h4>Type de paiement</h4>
+                    <span>Card de credit</span>
+                  </div>
+                  <div class="field">
+                    <h4>Requette special du client</h4>
+                    <span>Je serai un peu en retard</span>
+                  </div>
+                  <div class="field">
+                    <h4>Date de reservation</h4>
+                    <span>le 01 mai 2024</span>
+                  </div>
+                  <div class="field">
+                    <h4>Source</h4>
+                    <span>Site Web</span>
+                  </div>
+                </div>
+                </div>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td class="green-font">Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td class="green-font">Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td class="red-font">Cancel</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+              <tr>
+                <td>00001</td>
+                <td>le 29 mars 2024</td>
+                <td>daniel le poison</td>
+                <td>+243567834566</td>
+                <td>005</td>
+                <td>5</td>
+                <td>Confirmé</td>
+                <td>645 $</td>
+                <td>Site Web</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const reservations = document.getElementById('reservation_chart');
+        const clients = document.getElementById('client_chart');
+        new Chart(reservations, {
+          type: 'line',
+          data: {
+            labels: ['Lundi', 'Mardi', 'Mer', 'Jeudi', 'Vend', 'Sam', 'Dim'],
+            datasets: [{
+              label: "Reservations",
+              data: [12, 19, 3, 5, 2, 3, 5],
+              borderColor: 'rgb(255, 64, 0)',
+              backgroundColor: 'rgb(255, 64, 0)'
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            
+          }
+        });
+        new Chart(clients, {
+          type: 'line',
+          data: {
+            labels: ['Lundi', 'Mardi', 'Mer', 'Jeudi', 'Vend', 'Sam', 'Dim'],
+            datasets: [{
+              label: "Benefice",
+              data: [120, 194, 300, 545, 556, 345, 500],
+              borderColor: 'rgb(255, 13, 53)',
+              backgroundColor: 'rgb(255, 13, 53)',
+              borderRadius: 10
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            
+          }
+        });
+      </script>
+      <script src="js/tableScript.js"></script>
+</body>
+</html>
