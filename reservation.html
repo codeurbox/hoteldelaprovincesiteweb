@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservation</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="style/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style/index.css">
 </head>
+
 <body>
     <div class="blur-filter"></div>
     <header>
         <span class="material-symbols-outlined menu">
             menu
-            </span>
-            <span class="main-header">LOGO</span>
+        </span>
+        <span class="main-header">LOGO</span>
         <div class="menu_banner">
             <img src="images/sasha-kaunas-Fk9d0cxYqC4-unsplash-min.jpg" alt="">
         </div>
         <nav>
-            <a href="#">Découvrir l'hotel</a>
-            <a href="#">Visitez les Chambres</a>
-            <a href="#">Reservez Maintenant</a>
+            <a href="index.html">Accueil</a>
+            <a href="about.html">Découvrir l'hotel</a>
+            <a href="rooms.html">Visitez les Chambres</a>
+            <a href="reservation.html">Reservez Maintenant</a>
             <div class="dropdown">
                 <div class="dropdown-toggle">
-                    <a href="#">Plus d'option</a> 
+                    <a href="#">Plus d'option</a>
                     <span class="material-symbols-outlined">
                         expand_more
                     </span>
                 </div>
                 <div class="dropdown-menu">
                     <div class="dropdown-list">
-                        <a href="#">Témoignages</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">Tarification</a>
+                        <a href="about.html#testimony">Témoignages</a>
+                        <a href="rooms.html#FAQ">FAQ</a>
+                        <a href="rooms.html#pricing">Tarification</a>
                     </div>
                 </div>
             </div>
         </nav>
-        <a href="#" class="main_btn">Contact</a>
+        <a href="#" class="main_btn" id="#contact">Contact</a>
     </header>
     <section class="Reservation">
         <div class="step-line">
@@ -76,7 +84,8 @@
                 <input type="number" placeholder="Nombre d'adultes" id="nAdulte" class="text-body" min="1" required>
                 <input type="number" placeholder="Nombre d'enfants(optionel)" id="nChildren" class="text-body" min="1">
                 <input type="number" placeholder="Nombre de Chambres" class="text-body" id="nRoom" min="1" required>
-                <textarea name="clientRequest" placeholder="Demande particulière du client(optionel)" class="text-body"></textarea>
+                <textarea name="clientRequest" placeholder="Demande particulière du client(optionel)"
+                    class="text-body"></textarea>
                 <p class="error-message text-body"></p>
             </div>
             <div class="step-form paymentForm">
@@ -126,7 +135,8 @@
                     <input type="text" placeholder="MM/YY" id="MM/YY" class="text-body" required>
                     <input type="text" placeholder="CVC" id="CVC" class="text-body" required>
                     <input type="text" placeholder="Nom sur la Carte" id="CardName" class="text-body">
-                    <input type="text" placeholder="Adresse de facturation (si c'est différente de l'adresse du client)" class="text-body">
+                    <input type="text" placeholder="Adresse de facturation (si c'est différente de l'adresse du client)"
+                        class="text-body">
                 </div>
                 <div class="step-form mobilemoneypayment">
                     <input type="tel" placeholder="Votre Numéro de compte" id="MobileMoneyNumber" required>
@@ -136,24 +146,33 @@
             <div class="step-form finalform" style="align-items: flex-start;">
                 <h2 class="title-header">Paiement Réussi & Réservation Confirmée !</h2>
                 <p class="text-body">Cher(e) [Nom de l'utilisateur]</p>
-                <p class="text-body">Nous sommes heureux de vous informer que votre paiement a été réussi et que votre réservation d'hôtel est confirmée ! Un email avec un message de confirmation et plus de détails a été envoyé à [adresse email de l'utilisateur].</p>
+                <p class="text-body">Nous sommes heureux de vous informer que votre paiement a été réussi et que votre
+                    réservation d'hôtel est confirmée ! Un email avec un message de confirmation et plus de détails a
+                    été envoyé à [adresse email de l'utilisateur].</p>
                 <h2 class="title-header">Prochaines Étapes :</h2>
                 <ul>
-                    <li class="text-body"><strong>Voir Votre Réservation :</strong> Pour consulter les détails de votre réservation, veuillez <a href="#">cliquer ici</a>.</li>
-                    <li class="text-body"><strong>Modifier Votre Réservation :</strong> Si vous avez besoin de modifier votre réservation, comme changer les dates ou les préférences de chambre, veuillez <a href="#">cliquer ici</a> pour gérer votre réservation.</li>
+                    <li class="text-body"><strong>Voir Votre Réservation :</strong> Pour consulter les détails de votre
+                        réservation, veuillez <a href="#">cliquer ici</a>.</li>
+                    <li class="text-body"><strong>Modifier Votre Réservation :</strong> Si vous avez besoin de modifier
+                        votre réservation, comme changer les dates ou les préférences de chambre, veuillez <a
+                            href="#">cliquer ici</a> pour gérer votre réservation.</li>
                 </ul>
-                <p class="text-body">Merci d'avoir choisi l'hotel de la province ! Nous sommes impatients de vous accueillir.</p>
+                <p class="text-body">Merci d'avoir choisi l'hotel de la province ! Nous sommes impatients de vous
+                    accueillir.</p>
                 <p class="text-body">Cordialement,<br>
-                L'hotel de la province</p>
+                    L'hotel de la province</p>
             </div>
             <div class="step-form failedPayment">
                 <h2 class="title-header">Erreur de Paiement & Réservation Non Confirmée</h2>
                 <p class="text-body">Cher(e) [Nom de l'utilisateur],<br>
-                    Nous sommes désolés, mais il semble qu'il y ait eu une erreur lors du traitement de votre paiement. Votre réservation d'hôtel n'a pas été confirmée.</p>
+                    Nous sommes désolés, mais il semble qu'il y ait eu une erreur lors du traitement de votre paiement.
+                    Votre réservation d'hôtel n'a pas été confirmée.</p>
                 <h2 class="title-header">Que faire maintenant ?</h2>
                 <ul>
-                    <li class="text-body">Vérifiez vos informations de paiement et réessayez. Assurez-vous que les détails de votre carte de crédit sont corrects.</li>
-                    <li class="text-body">Contactez notre service clientèle pour obtenir de l'aide. Notre équipe est disponible pour vous aider à résoudre tout problème lié à votre réservation.</li>
+                    <li class="text-body">Vérifiez vos informations de paiement et réessayez. Assurez-vous que les
+                        détails de votre carte de crédit sont corrects.</li>
+                    <li class="text-body">Contactez notre service clientèle pour obtenir de l'aide. Notre équipe est
+                        disponible pour vous aider à résoudre tout problème lié à votre réservation.</li>
                 </ul>
             </div>
             <button class="text-body submitBtn">Suivant</button>
@@ -193,4 +212,5 @@
     <script src="js/index.js"></script>
     <script src="js/formHandling.js"></script>
 </body>
+
 </html>
