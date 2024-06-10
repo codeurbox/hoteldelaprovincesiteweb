@@ -216,6 +216,7 @@ a:hover {
 
 .banner_description {
     width: 70%;
+    margin: auto;
 }
 
 .light-filter {
@@ -231,6 +232,16 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.banner .call_to_action {
+    margin: auto;
+}
+
+.banner .main-header,
+.banner .text-body {
+    margin: auto;
+    text-align: center;
 }
 
 .banner .main-header,
