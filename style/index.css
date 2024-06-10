@@ -27,7 +27,7 @@
 }
 
 body {
-    padding: 20px 50px;
+    padding: 20px 200px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -943,7 +943,13 @@ form .back-button {
     color: var(--white-font);
 }
 
-@media(max-width: 890px) {
+@media(max-width: 1276px) {
+    body {
+        padding: 20px 100px;
+    }
+}
+
+@media(max-width: 1076px) {
     body {
         padding: 20px;
     }
