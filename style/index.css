@@ -564,6 +564,7 @@ footer img {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    align-items: stretch;
 }
 
 .room-list .item {
@@ -574,6 +575,15 @@ footer img {
     min-width: 200px;
     flex-grow: 1;
 }
+
+.item {
+    justify-content: space-between;
+}
+
+.room-list .item .text-body {
+    margin-bottom: auto;
+}
+
 
 .room-list .item .sqarre_image_container {
     width: 100%;
@@ -775,8 +785,8 @@ footer img {
     width: 500px;
     aspect-ratio: 1;
     flex-grow: 1;
-    background-image: url(../images/linus-mimietz-p3UWyaujtQo-unsplash-min.jpg);
-    background-attachment: fixed;
+    background-image: url(../images/WhatsApp\ Image\ 2024-06-13\ at\ 08.06.00_f0e7f37d.jpg);
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     border-radius: 5px;
     background-size: cover;
