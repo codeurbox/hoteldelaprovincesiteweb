@@ -658,6 +658,7 @@ footer img {
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .pricing .item {
@@ -668,6 +669,7 @@ footer img {
     padding: 30px;
     border: 1px solid var(--dark-font);
     flex-grow: 1;
+    min-width: 250px;
 }
 
 .pricing .item ul {
