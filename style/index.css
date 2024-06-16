@@ -977,6 +977,10 @@ form .back-button {
         height: max-content;
     }
 
+    .room-swiper .main-header {
+        font-size: x-large;
+    }
+
     .room-slide {
         flex-direction: column;
     }
