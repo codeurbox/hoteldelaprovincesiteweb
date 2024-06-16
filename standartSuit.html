@@ -17,6 +17,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -89,7 +90,7 @@
     </section> -->
     <section class="room-guide">
         <h1 class="main-header">Suite simple: Explorez la chambre</h1>
-        <p class="text-body">Découvrez-la chambre en images</p>
+        <p class="text-body">Découvrez-la en images</p>
         <div class="key_works">
             <span class="high-light-text">Confort</span>
             <span class="high-light-text">Détente</span>
@@ -97,22 +98,59 @@
         </div>
         <div class="swiper room-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide room-slide">
-                    <div class="sqarre_image_container">
-                        <img src="./images/WhatsApp Image 2024-06-13 at 08.06.00_baf4da37.jpg" alt="">
+                <div class="swiper-slide">
+                    <div class="room-slide">
+                        <div class="sqarre_image_container">
+                            <img src="./images/WhatsApp Image 2024-06-13 at 08.05.59_f79ee02f.jpg" alt="">
+                        </div>
+                        <div class="room-image-description">
+                            <h1 class="main-header">
+                                Le nécessaire pour passer un agréable moment de détente
+                            </h1>
+                            <p class="text-body">
+                                Dotée d'un lit confortable, d'une petite table et d'une chaise pour se détendre, cette
+                                suite offre tout le nécessaire pour passer un agréable moment de repos.
+                            </p>
+                        </div>
                     </div>
-                    <div class="room-image-description">
-                        <h1 class="title-header">
-                            Le nécessaire pour passer un agréable moment de détente
-                        </h1>
-                        <p>
-                            Dotée d'un lit confortable, d'une petite table et d'une chaise pour se détendre, cette
-                            suite offre tout le nécessaire pour passer un agréable moment de repos.
-                        </p>
+                </div>
+                <div class="swiper-slide">
+                    <div class="room-slide">
+                        <div class="sqarre_image_container">
+                            <img src="./images/WhatsApp Image 2024-06-13 at 08.06.00_baf4da37.jpg" alt="">
+                        </div>
+                        <div class="room-image-description">
+                            <h1 class="main-header">
+                                Bureau compact pour le travail en chambre.
+                            </h1>
+                            <p class="text-body">
+                                Un petit bureau, parfait pour travailler confortablement depuis votre chambre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="room-slide">
+                        <div class="sqarre_image_container">
+                            <img src="./images/WhatsApp Image 2024-06-13 at 08.05.58_a954f2a3.jpg" alt="">
+                        </div>
+                        <div class="room-image-description">
+                            <h1 class="main-header">
+                                Un lit confortable pour une personne, idéal pour un séjour agréable et reposant.
+                            </h1>
+                            <p class="text-body">
+                                Profitez d'un confort inégalé avec notre lit pour une personne, idéal pour garantir un
+                                séjour mémorable et reposant.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination pagination"></div>
+            <div class="swiper-button-next navigation">Voir plus</div>
+            <div class="swiper-button-prev navigation">Precedent</div>
         </div>
+        <a href="#" class="main_btn">Reserver la chambre</a>
     </section>
     <!-- <section class="room-type-section">
         <div class="room-type-description">
@@ -187,7 +225,22 @@
             <a href="#">Paramètres des cookiess</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/index.js"></script>
+    <script>
+        const swiper = new Swiper(".swiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+            loop: true,
+        });
+    </script>
+
 </body>
 
 </html>
