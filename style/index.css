@@ -984,6 +984,7 @@ form .back-button {
     .room-slide .sqarre_image_container,
     .room-slide .room-image-description {
         width: 100% !important;
+        height: 50% !important;
     }
 
     header .main-header {
