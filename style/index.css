@@ -1134,6 +1134,10 @@ form .back-button {
         width: 100%;
         text-align: center;
     }
+
+    .services {
+        justify-content: center;
+    }
 }
 
 .hidden {
