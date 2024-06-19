@@ -84,7 +84,6 @@
             <div class="step" id="step1">1</div>
             <div class="step" id="step2">2</div>
             <div class="step" id="step3">3</div>
-            <div class="step" id="step4">4</div>
             <hr>
         </div>
         <h1 class="main-header">Formulaire de Réservation</h1>
@@ -92,30 +91,77 @@
         <form action="" method="POST" class="reservation-form">
             <div class="step-form clientform" style="display: flex;">
                 <h2 class="title-header">Informations du client</h2>
-                <input type="text" placeholder="Nom et prénom" id="FullName" class="text-body" required>
-                <input type="email" placeholder="Adresse e-mail" id="email" class="text-body" required>
-                <input type="tel" placeholder="Numéro de téléphone" id="tel" class="text-body" required>
-                <input type="text" placeholder="Address (optional)" id="address" class="text-body">
+                <div class="group_field">
+                    <div class="sub_group_field">
+                        <div class="field">
+                            <label for="nom" class="text-body">Nom:</label>
+                            <input type="text" id="nom" class="text-body" required>
+                        </div>
+                        <div class="field">
+                            <label for="postnom" class="text-body">Post Nom:</label>
+                            <input type="text" id="postnom" class="text-body" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="prenom" class="text-body">Prenom:</label>
+                        <input type="text" id="prenom" class="text-body" required>
+                    </div>
+
+                </div>
+                <div class="field">
+                    <label for="email" class="text-body">Adresse e-mail</label>
+                    <input type="email" id="email" class="text-body" required>
+                </div>
+                <div class="field">
+                    <label for="tel" class="text-body">Numéro de téléphone</label>
+                    <input type="tel" id="tel" class="text-body" required>
+                </div>
+                <div class="field">
+                    <label for="address" class="text-body">Address (optional)</label>
+                    <input type="text" placeholder="" id="address" class="text-body">
+                </div>
+
                 <p class="error-message text-body"></p>
             </div>
             <div class="step-form reservationform">
                 <h2 class="title-header">Détails de la réservation</h2>
-                <select id="roomType" class="text-body">
-                    <option value="">Selection le type de Chambre</option>
-                    <option value="standard">Chambres Standard</option>
-                    <option value="super">Chambres Supérieure</option>
-                    <option value="luxe">Suites Deluxe</option>
-                </select>
-                <input type="text" placeholder="Date d'arrivée" id="checkin" class="text-body" required>
-                <input type="text" placeholder="Date de départ" id="checkout" class="text-body" required disabled>
-                <input type="number" placeholder="Nombre d'adultes" id="nAdulte" class="text-body" min="1" required>
-                <input type="number" placeholder="Nombre d'enfants(optionel)" id="nChildren" class="text-body" min="1">
-                <input type="number" placeholder="Nombre de Chambres" class="text-body" id="nRoom" min="1" required>
-                <textarea name="clientRequest" placeholder="Demande particulière du client(optionel)"
-                    class="text-body"></textarea>
+                <div class="field">
+                    <label for="roomType" class="text-body"> Type de chambre</label>
+                    <select id="roomType" class="text-body">
+                        <option value="">Selection le type de Chambre</option>
+                        <option value="standard">Chambres Standard</option>
+                        <option value="super">Chambres Supérieure</option>
+                        <option value="luxe">Suites Deluxe</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label class="text-body" for="checkin">Date d'arrivée</label>
+                    <input type="text" id="checkin" class="text-body" required>
+                </div>
+                <div class="field">
+                    <label class="text-body" for="checkout">Date de départ</label>
+                    <input type="text" id="checkout" class="text-body" required disabled>
+                </div>
+                <div class="field">
+                    <label class="text-body" for="nAdulte">Nombre d'adultes</label>
+                    <input type="number" id="nAdulte" class="text-body" min="1" required>
+                </div>
+                <div class="field">
+                    <label class="text-body" for="nChildren">Nombre d'enfants(optionel)</label>
+                    <input type="number" id="nChildren" class="text-body" min="1">
+                </div>
+                <div class="field">
+                    <label class="text-body" for="nRoom">Nombre de Chambres</label>
+                    <input type="number" class="text-body" id="nRoom" min="1" required>
+                </div>
+                <div class="field">
+                    <label class="text-body" for="clientRequest"></label>
+                    <textarea name="clientRequest" placeholder="Demande particulière du client(optionel)"
+                        class="text-body"></textarea>
+                </div>
                 <p class="error-message text-body"></p>
             </div>
-            <div class="step-form paymentForm">
+            <!-- <div class="step-form paymentForm">
                 <h2 class="title-header">Informations de paiement</h2>
                 <div class="price_preview">
                     <h2 class="title-header">Détails de la réservation</h2>
@@ -147,35 +193,60 @@
                     </div>
                 </div>
                 <h2 class="title-header" style="align-self: flex-start;">Paiement</h2>
-                <select id="paymentMethod" class="text-body">
-                    <option value="">Methode de paiement</option>
-                    <option value="VISA">VISA</option>
-                    <option value="MasterCard">Master Card</option>
-                    <option value="PayPal">Pay Pal</option>
-                    <option value="Airtel">Airtel (si vous séjournez en RDC)</option>
-                    <option value="Vodacom">Vodacom (si vous séjournez en RDC)</option>
-                    <option value="Orange">Orange (si vous séjournez en RDC)</option>
-                    <option value="OnArrival">À l'arrivée (La réservation sera annulée en cas de retard)</option>
-                </select>
+                <div class="field">
+                    <label for="paymentMethod" class="text-body">Methode de paiement</label>
+                    <select id="paymentMethod" class="text-body">
+                        <option value="">Choisissez une methode de paiement</option>
+                        <option value="VISA">VISA</option>
+                        <option value="MasterCard">Master Card</option>
+                        <option value="PayPal">Pay Pal</option>
+                        <option value="Airtel">Airtel (si vous séjournez en RDC)</option>
+                        <option value="Vodacom">Vodacom (si vous séjournez en RDC)</option>
+                        <option value="Orange">Orange (si vous séjournez en RDC)</option>
+                        <option value="OnArrival">À l'arrivée (La réservation sera annulée en cas de retard)</option>
+                    </select>
+                </div>
+
                 <div class="step-form creditpayment">
-                    <input type="text" placeholder="Numéro de carte" id="cardNumber" class="text-body" required>
-                    <input type="text" placeholder="MM/YY" id="MM/YY" class="text-body" required>
-                    <input type="text" placeholder="CVC" id="CVC" class="text-body" required>
-                    <input type="text" placeholder="Nom sur la Carte" id="CardName" class="text-body">
-                    <input type="text" placeholder="Adresse de facturation (si c'est différente de l'adresse du client)"
-                        class="text-body">
+                    <div class="field">
+                        <label class="text-body" for="cardNumber">Numéro de carte
+                        </label>
+                        <input type="text" id="cardNumber" class="text-body" required>
+                    </div>
+                    <divd class="field">
+                        <label class="text-body" for="MM/YY">MM/YY</label>
+                        <input type="text" id="MM/YY" class="text-body" required>
+                    </divd>
+                    <div class="field">
+                        <label for="CVC" class="text-body">CVC</label>
+                        <input type="text" id="CVC" class="text-body" required>
+                    </div>
+                    <div class="field">
+                        <label for="CardName" class="text-body">Nom sur la Carte</label>
+                        <input type="text" id="CardName" class="text-body">
+                    </div>
+                    <div class="field">
+                        <label for="" class="text-body">Adresse de facturation (si c'est différente de l'adresse du
+                            client)</label>
+                        <input type="text" placeholder="" class="text-body">
+                    </div>
+
                 </div>
                 <div class="step-form mobilemoneypayment">
-                    <input type="tel" placeholder="Votre Numéro de compte" id="MobileMoneyNumber" required>
+                    <div class="field">
+                        <label for="MobileMoneyNumber" class="text-body">Votre Numéro de compte</label>
+                        <input type="tel" id="MobileMoneyNumber" class="text-body" required>
+                    </div>
                 </div>
                 <p class="error-message text-body"></p>
-            </div>
+            </div> -->
             <div class="step-form finalform" style="align-items: flex-start;">
-                <h2 class="title-header">Paiement Réussi & Réservation Confirmée !</h2>
-                <p class="text-body">Cher(e) [Nom de l'utilisateur]</p>
-                <p class="text-body">Nous sommes heureux de vous informer que votre paiement a été réussi et que votre
-                    réservation d'hôtel est confirmée ! Un email avec un message de confirmation et plus de détails a
-                    été envoyé à [adresse email de l'utilisateur].</p>
+                <h2 class="title-header">Réservation Reçue !</h2>
+                <p class="text-body">Cher(e) [Nom de l'utilisateur],</p>
+                <p class="text-body"> Nous sommes heureux de vous informer que votre
+                    réservation a été reçue et est en attente de confirmation par paiement. Un email avec le lien vers
+                    la page de confirmation vous a été envoyé à [adresse email de l'utilisateur]. Cet email inclut
+                    également un lien pour la modification de la réservation.</p>
                 <h2 class="title-header">Prochaines Étapes :</h2>
                 <ul>
                     <li class="text-body"><strong>Voir Votre Réservation :</strong> Pour consulter les détails de votre
