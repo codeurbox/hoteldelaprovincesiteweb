@@ -68,11 +68,11 @@ function validateStep1() {
     const email = document.getElementById("email").value;
     const tel = document.getElementById("tel").value;
     const address = document.getElementById("address").value;
-    if (nom.trim() === '' || postnom.trim() === '' || prenom.trim() === '' || email.trim() === '' || tel.trim() === '') {
-        document.querySelectorAll(".error-message")[0].textContent = "Veillez remplir Tous les noms, l' email et le numero de telephone";
+    if (nom.trim() === '' || postnom.trim() === '' || prenom.trim() === '' || email.trim() === '' || tel.trim() === '' || address.trim() === '') {
+        document.querySelectorAll(".error-message")[0].textContent = "Veillez remplir Tous les noms, l'adresse email et résidentielle et le numero de telephone";
         return false;
     }
-    console.log("User input: ", name, email, tel, address)
+    console.log("User input: ", email, tel, address)
     return true;
 }
 
