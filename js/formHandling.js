@@ -1,3 +1,50 @@
+const forManyCB = document.getElementById("forManyCB");
+let roomSelected = '';
+window.onload = () => {
+    const params = new URLSearchParams(window.location.search);
+    const room = params.get('room');
+    roomSelected = room;
+    console.log("Room: ", room)
+    if (room && !forManyCB.checked) {
+        document.getElementById("roomNumberTitle").textContent = "Chambre Nº " + room;
+
+    }
+    if (forManyCB.checked) {
+        document.getElementById("roomType_field").style.display = "flex"
+        document.getElementById("roomNumber_field").style.display = "none"
+
+        document.getElementById("nAdulte_field").style.display = "flex"
+
+        document.getElementById("nChildren_field").style.display = "flex"
+        document.getElementById("roomNumberTitle").textContent = "";
+    }
+}
+
+forManyCB.addEventListener("change", () => {
+    if (forManyCB.checked) {
+        document.getElementById("roomType_field").style.display = "flex"
+        document.getElementById("roomNumber_field").style.display = "none"
+
+        document.getElementById("nAdulte_field").style.display = "flex"
+
+        document.getElementById("nChildren_field").style.display = "flex"
+        document.getElementById("roomNumberTitle").textContent = "";
+    } else {
+        if (roomSelected) {
+            document.getElementById("roomNumber_field").style.display = "none"
+        }
+        else {
+            document.getElementById("roomNumber_field").style.display = "flex"
+        }
+        document.getElementById("roomType_field").style.display = "none"
+
+
+        document.getElementById("nAdulte_field").style.display = "none"
+
+        document.getElementById("nChildren_field").style.display = "none"
+        document.getElementById("roomNumberTitle").textContent = "Chambre Nº " + roomSelected;
+    }
+})
 let formProgress = document.querySelectorAll(".step-line div");
 
 let currentStep = 1;
@@ -63,30 +110,84 @@ function prevStep(step) {
 
 function validateStep1() {
     const nom = document.getElementById("nom").value;
-    const postnom = document.getElementById("postnom").value;
     const prenom = document.getElementById("prenom").value;
     const email = document.getElementById("email").value;
     const tel = document.getElementById("tel").value;
     const address = document.getElementById("address").value;
-    if (nom.trim() === '' || postnom.trim() === '' || prenom.trim() === '' || email.trim() === '' || tel.trim() === '' || address.trim() === '') {
+    if (nom.trim() === '' || prenom.trim() === '' || email.trim() === '' || tel.trim() === '' || address.trim() === '') {
         document.querySelectorAll(".error-message")[0].textContent = "Veillez remplir Tous les noms, l'adresse email et résidentielle et le numero de telephone";
         return false;
     }
     console.log("User input: ", email, tel, address)
+    // document.getElementById("hidden-email").value = email;
+    // document.getElementById("hidden-subject").value = "Confirmation de Réservation - Hôtel de la Province";
+    // document.getElementById("name-holder").textContent = nom + " " + postnom + " " + prenom
     return true;
 }
 
 function validateStep2() {
-    const roomType = document.getElementById("roomType").value;
-    const checkin = document.getElementById("checkin").value;
-    const checkout = document.getElementById("checkout").value;
-    const nAdulte = document.getElementById("nAdulte").value;
-    const nRoom = document.getElementById("nRoom").value;
-    if (roomType.trim() === '' || checkin.trim() === '' || checkout.trim() === '' || nAdulte.trim() === '' || nRoom.trim() === '') {
-        document.querySelectorAll(".error-message")[1].textContent = "Veillez selectioner le type de chambre et choisir la date d'arrive, de depart et remplir le nombre d'adulte et le nombre de chambres";
-        return false;
+    if (forManyCB.checked) {
+        const roomType = document.getElementById("roomType").options[document.getElementById("roomType").selectedIndex].text;
+        const checkin = document.getElementById("checkin").value;
+        const checkout = document.getElementById("checkout").value;
+        const nAdulte = document.getElementById("nAdulte").value;
+        const nChildren = document.getElementById("nChildren").value;
+        const nRoom = document.getElementById("nRoom").value;
+        if (roomType.trim() === '' || checkin.trim() === '' || checkout.trim() === '' || nAdulte.trim() === '' || nRoom.trim() === '') {
+            document.querySelectorAll(".error-message")[1].textContent = "Veillez selectioner le type de chambre et choisir la date d'arrive, de depart et remplir le nombre d'adulte et le nombre de chambres";
+            return false;
+        }
     }
+    else {
+        if (roomSelected) {
+            const roomNumberText = document.getElementById("roomNumber").options[document.getElementById("roomType").selectedIndex].text;
+            const roomNumber = document.getElementById("roomNumber").value;
+            const checkin = document.getElementById("checkin").value;
+            const checkout = document.getElementById("checkout").value;
+            if (checkin.trim() === '' || checkout.trim() === '') {
+                document.querySelectorAll(".error-message")[1].textContent = "Veillez choisir la date d'arrive et de depart";
+                return false;
+            }
+
+        }
+        else {
+            const roomNumberText = document.getElementById("roomNumber").options[document.getElementById("roomType").selectedIndex].text;
+            const roomNumber = document.getElementById("roomNumber").value;
+            const checkin = document.getElementById("checkin").value;
+            const checkout = document.getElementById("checkout").value;
+            if (roomNumber.trim() === '' || checkin.trim() === '' || checkout.trim() === '') {
+                document.querySelectorAll(".error-message")[1].textContent = "Veillez selectioner un numero de chambre, choisir la date d'arrive et de depart";
+                return false;
+            }
+        }
+    }
+
+    // const name = document.getElementById("name-holder").textContent
+    // document.getElementById("hidden-body").textContent = `Cher(e) ${name},
+
+    // Nous vous remercions d'avoir choisi l'Hôtel de la Province pour votre prochain séjour.\n
+
+    // Nous avons bien reçu votre demande de réservation avec les détails suivants :\n
+
+    //     Date d'arrivée : ${checkin}\n
+    //     Date de départ : ${checkout}\n
+    //     Nombre de personnes : ${nAdulte} Adultes et ${nChildren}\n enfants
+    //     Type de chambre : ${roomType}\n
+
+    // Votre demande est actuellement en attente de confirmation.\n
+
+    // Le montant total à payer pour votre réservation est de : 456 $.\n
+
+    // Pour confirmer votre réservation et procéder au paiement, veuillez cliquer sur le lien suivant : http://127.0.0.1:5501/reservation.html.\n
+
+    // Si vous avez des questions ou besoin d'assistance supplémentaire, n'hésitez pas à nous contacter à l'adresse suivante : hoteldelaprovince@gmail.com ou par téléphone au +243 567 876 4334.\n
+
+    // Nous nous réjouissons de vous accueillir prochainement à l'Hôtel de la Province.\n
+
+    // Cordialement,\n`
+    // document.getElementById("hidden-form").submit();
     return true;
+
 }
 
 // function validateStep3() {
